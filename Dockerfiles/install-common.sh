@@ -24,6 +24,12 @@ make
 rm -rf /home/tensorflow_cc/.cache
 rm -rf /root/.cache
 make install
+
+# check libtensorflow_cc.so.2
+cd /usr/local/lib
+[[ -f libtensorflow_cc.so.2 ]] || ln -s libtensorflow_cc.so libtensorflow_cc.so.2
+ldconfig
+
 cd "$cwd"
 rm -rf tensorflow_cc/tensorflow_cc/build
 

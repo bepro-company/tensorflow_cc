@@ -5,6 +5,8 @@ COPY . tensorflow_cc
 # alternatively, clone the repository
 # RUN git clone https://github.com/FloopCZ/tensorflow_cc.git
 
+ENV TF_CUDA_COMPUTE_CAPABILITIES 6.0,6.1,7.0,7.5,8.0,8.6
+
 # build and install
 # temporarily use the CUDA stubs, the real libraries will be provided by nvidia-docker
 RUN ln -s /usr/local/cuda/lib64/stubs/libcuda.so /usr/local/cuda/lib64/stubs/libcuda.so.1 \
